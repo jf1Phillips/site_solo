@@ -1,12 +1,32 @@
+body {
+    background-color: rgba(239, 173, 87, 0.089);
+    font-family: Roboto, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 #page_content {
     margin-left: 15%;
     margin-right: 15%;
 }
 
-#page_content .title {
-    font-size: 20px;
+.putText {
+    font-size: 15px;
+    color: rgb(87, 87, 87);
 }
 
-#page_content .big_title {
-    font-size: 30px;
+.title {
+    font-size: 20px;
+    margin-bottom: -2px;
+    color: rgb(16, 82, 168);
+}
+
+.big_title {
+    font-size: 25px;
+    margin-bottom: -2px;
+    color: rgb(16, 82, 168);
+}
+
+.contentInfo {
+    margin-left: 10px;
+    border-left: 2px solid rgb(16, 82, 168);
+    padding-left: 10px;
 }
