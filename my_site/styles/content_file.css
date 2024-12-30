@@ -1,11 +1,10 @@
 body {
-    /* background-color: rgba(239, 173, 87, 0.089); */
-    font-family: Roboto, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Inter, sans-serif;
 }
 
 #page_content {
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 .putText {
@@ -26,7 +25,26 @@ body {
 }
 
 .contentInfo {
-    margin-left: 10px;
-    border-left: 2px solid rgb(16, 82, 168);
-    padding-left: 10px;
+    margin-left: 8px;
+    /* border-left: 2px solid rgb(16, 82, 168); */
+    /* padding-left: 16px; */
+}
+
+@media (min-width: 1500px) {
+    #page_content {
+        margin-left: 15%;
+        width: 800px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #page_content {
+        width: 800px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px){
+    #page_content {
+        width: 650px;
+    }
 }
