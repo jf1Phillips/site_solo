@@ -1,0 +1,96 @@
+/* --------------------------------------------------------------
+
+C - content Section
+
+-------------------------------------------------------------- */
+
+#pageContent {
+	 padding-top: 7px;
+	}
+
+#pageContent h1 {
+	padding: 15px 2px 0 2px; margin: 0;
+	font-family:Arial, "Times New Roman", Times, serif;
+	font-weight: bold;
+	font-size: 1.7em;
+	}
+
+
+h4#sideNavHome {
+	font-weight: bold;
+	margin: 0 0 5px 0;
+}
+h4#sideNavHome a {
+	background: #fff;
+	display: block;
+	padding: 5px 5px 5px 10px;
+	border-bottom: 1px solid #a4b2bf;
+	text-decoration: none;
+	color: #666;
+}
+h4#sideNavHome a:hover {
+	color: #2973bd;
+}
+
+ul.sideNav {
+	margin: 0; padding: 0;
+	list-style-type: none;
+	cursor: default;
+	}
+ul.sideNav li {
+	list-style-type: none;
+	margin: 5px 0; padding: 0;
+	border-top: 1px solid #a4b2bf;
+	}
+ul.sideNav li.first {
+	border-top: none;
+	}
+ul.sideNav a {
+	display: block;
+	color: #2973bd;
+	padding:5px 0 0 10px;
+	background: url('/media/oecdorg/styleassets/images/content/topicscountries/sidenavfl1.gif') 0 8px no-repeat;
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	color: #666;
+	text-decoration: none;
+	}
+ul.sideNav a:hover {
+	color: #2973bd;
+	}
+ul.sideNav li.current {
+	background: #2973bd;
+	}
+		
+ul.sideNav li.current a, ul.sideNav li span.currentbranch0 a {
+	color: #fff;
+	background-image: none;
+
+	}
+ul.sideNav li span.currentbranch0{padding-bottom:5px;	background-color: #2973BD; display:block;}
+
+.block #innerSearch fieldset {
+	position: relative;
+	border: 1px solid #018fd0;
+	background: #fff;
+	margin: 10px 0 0 0;
+	padding: 0;
+	font-size: 12px;
+}
+.block #innerSearch fieldset input {
+	padding: 3px;
+	margin: 0;
+	width: 170px;
+	border-color: #fff;
+}
+.block #innerSearch fieldset button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	background: #ecf7fd;
+	border: none;
+	outline: none;
+}
+.block #innerSearch fieldset button:hover {
+	background: #dedede;
+}
