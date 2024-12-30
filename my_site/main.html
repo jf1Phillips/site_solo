@@ -73,7 +73,7 @@
     <div id="page_content">
         <div>
             <p class="title">Nos origines</p>
-            <p id="origines" class="text_file/Origines.txt"></p>
+            <p id="origines" class="putText text_file/Origines.txt"></p>
         </div>
     </div>
 
@@ -81,10 +81,11 @@
 </body>
 <script>
     function getAllFile() {
-        var all_p = document.getElementsByTagName("p");
+        var all_p = document.getElementsByClassName("putText");
 
         for (i = 0; all_p[i]; i++) {
-            loadFile(all_p[i].className, all_p[i].id);
+            listClass = all_p[i].classList;
+            loadFile(listClass[1], all_p[i].id);
         }
     }
 </script>

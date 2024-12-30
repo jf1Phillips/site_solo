@@ -6,7 +6,7 @@ function loadFile(file, id) {
             return response.text();
         })
         .then(data => {
-            document.getElementById(id).innerText = data;
+            document.getElementById(id).innerText = data.replaceAll("\n", " ");
         })
         .catch(error => {
             console.error('Erreur:', error);
