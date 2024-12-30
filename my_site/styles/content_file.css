@@ -3,6 +3,10 @@
     margin-right: 15%;
 }
 
-#page_content .title{
+#page_content .title {
     font-size: 20px;
+}
+
+#page_content .big_title {
+    font-size: 30px;
 }
