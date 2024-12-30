@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Solidarité Logement</title>
+    <script src="script/load_file.js" type="text/javascript"></script>
+</head>
+<body onload="getAllFile()">
+    <div>
+        <p id="test" class="text_file/acceuil.txt"></p>
+
+    </div>
+</body>
+<script>
+    function getAllFile() {
+        var all_p = document.getElementsByTagName("p");
+
+        for (i = 0; all_p[i]; i++) {
+            loadFile(all_p[i].className, all_p[i].id);
+        }
+    }
+</script>
+</html>
