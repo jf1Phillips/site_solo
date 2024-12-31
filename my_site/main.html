@@ -10,18 +10,34 @@
     <link rel="stylesheet" type="text/css" href="styles/content_file.css" />
     <link rel="stylesheet" type="text/css" href="styles/contact_us.css"/>
     <link rel="stylesheet" type="text/css" href="styles/general.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/menu.css"/>
     <script src="script/load_file.js" type="text/javascript"></script>
     <title>Solidarité Logement</title>
 </head>
 <body onload="getAllFile()">
-    <a href="main.html" title="Solidarité Logement" id="logo">
-        <img src="img/Solo.jpg" alt="Solidarité Logement" />
-    </a>
+
 
     <!-- MENU OF THE WEBSITE -->
     <div id="menu">
-        <a href="#whoWeAre">L'Association</a>
-        <a href="#wePropose">Services</a>
+        <a href="main.html" title="Solidarité Logement" id="logo">
+            <img src="img/Solo.jpg" alt="Solidarité Logement" />
+        </a>
+        <div>
+            <a href="main.html" class="menuLink">L'Association</a>
+            <a href="#wePropose" class="menuLink">Services</a>
+        </div>
+
+        <script>
+            const header = document.getElementById('menu');
+    
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        </script>
     </div>
     <!-- END OF THE WEBSITE MENU -->
     
