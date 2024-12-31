@@ -1,0 +1,12 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.greyText {
+    color: rgb(87, 87, 87);
+}
+
+.blueText {
+    color: rgb(16, 82, 168);
+}
