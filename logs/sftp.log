@@ -1,6 +1,0 @@
-Apr  3 18:44:28 10.71.56.0 tmp75456629-5315 Connection from 10.71.56.0 port 64026 on 82.165.84.91 port 22 rdomain ""
-Apr  3 18:44:28 10.71.56.0 tmp75456629-5315 Accepted password for tmp75456629-5315 from 10.71.56.0 port 64026 ssh2
-Apr  3 18:44:29 10.71.56.0 tmp75456629-5315 Starting session: subsystem 'sftp' for tmp75456629-5315 from 10.71.56.0 port 64026 id 0
-Apr  3 18:44:29 10.71.56.0 tmp75456629-5315 session opened for local user tmp75456629-5315 from [10.71.56.0]
-Apr  3 18:45:59 10.71.56.0 tmp75456629-4413 Connection from 10.71.56.0 port 14636 on 82.165.84.91 port 22 rdomain ""
-Apr  3 18:45:59 10.71.56.0 tmp75456629-4413 Accepted password for tmp75456629-4413 from 10.71.56.0 port 14636 ssh2
