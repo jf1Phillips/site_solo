@@ -1,0 +1,27 @@
+#menu {
+    top: 0px;
+    position: fixed;
+    background-color: white;
+    border-radius: 0px 0px 3px 3px;
+    width: 100%;
+    height: 80px;
+    transition: box-shadow 100ms linear;
+}
+
+#menu img {
+    margin-top: 18px;
+    margin-left: 20px;
+    height: 60px;
+}
+
+.menuLink {
+    position: relative;
+    font-size: 18px;
+    left: 140px;
+    top: -50px;
+    margin-right: 30px;
+}
+
+.scrolled {
+    box-shadow: -3px 8px 20px rgb(189, 189, 189);
+}
