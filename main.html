@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="heart.css"/>
+    <script src="swap.js"></script>
+    <script src="heart.js"></script>
+    <title>Loulou</title>
+</head>
+<body>
+    <div class="heart"></div>
+    <p id="texte">Veux-tu etre ma Valentine ?</p>
+    <div id="div_oui">
+        <button id="big" class="button" onclick="display_hearts()">Oui !</button>
+    </div>
+    <div id="div_non">
+        <button onmouseenter="swap_id('div_oui', 'div_non');" class="button">Non</button>
+    </div>
+</body>
+</html>
