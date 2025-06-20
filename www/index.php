@@ -1,3 +1,12 @@
+<?php
+require '../config.php';
+
+// Récupérer tous les utilisateurs
+$stmt = $pdo->query("SELECT * FROM users");
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$index = parse_ini_file(__DIR__ . '/../.env')["INDEX"];
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,20 +25,25 @@
     <title>Solidarité Logement</title>
 </head>
 <body onload="getAllFile()">
-
+  <h1>Utilisateurs</h1>
+  <ul>
+    <?php foreach ($users as $user): ?>
+      <li><?= htmlspecialchars($user['nom']) ?> (<?= htmlspecialchars($user['mode']) ?>)</li>
+    <?php endforeach; ?>
+  </ul>
 
     <!-- MENU OF THE WEBSITE -->
     <div id="menu">
-        <a href="index.html" title="Solidarité Logement" id="logo">
+        <a href=<?=$index?> title="Solidarité Logement" id="logo">
             <img src="img/Solo.jpg" alt="Solidarité Logement" />
         </a>
         <div>
-            <a href="index.html" class="menuLink">L'Association</a>
+            <a href=<?=$index?> class="menuLink">L'Association</a>
             <a href="#wePropose" class="menuLink">Services</a>
         </div>
 
         <script>
-            const header = document.getElementById('menu');
+            const header = document.getElementById('menu');parse_ini_file(__DIR__ . '/.env')
     
             window.addEventListener('scroll', () => {
                 if (window.scrollY >= 20) {
