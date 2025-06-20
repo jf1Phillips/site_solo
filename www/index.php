@@ -14,7 +14,7 @@ $index = parse_ini_file(__DIR__ . '/../.env')["INDEX"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="Description" content="Aider les personnes en difficulté à résoudre leurs
     démarches face au problème du logement" />
-    <meta name="Keywords" content="Solidarité Logement, Logement, Propriétaire, 
+    <meta name="Keywords" content="Solidarité Logement, Logement, Propriétaire,
     monde associatif, associations du 16eme arrondissement, 16eme arrondissement, Locataires, recherche logement, 
     Fonds de Solidarité pour le Logement" />
     <link rel="stylesheet" type="text/css" href="styles/content_file.css" />
