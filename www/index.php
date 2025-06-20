@@ -43,8 +43,7 @@ $index = parse_ini_file(__DIR__ . '/../.env')["INDEX"];
         </div>
 
         <script>
-            const header = document.getElementById('menu');parse_ini_file(__DIR__ . '/.env')
-    
+            const header = document.getElementById('menu');
             window.addEventListener('scroll', () => {
                 if (window.scrollY >= 20) {
                     header.classList.add('scrolled');
