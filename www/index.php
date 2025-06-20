@@ -17,7 +17,7 @@ $index = parse_ini_file(__DIR__ . '/../.env')["INDEX"];
     <meta name="Keywords" content="Solidarité Logement, Logement, Propriétaire,
     monde associatif, associations du 16eme arrondissement, 16eme arrondissement, Locataires, recherche logement, 
     Fonds de Solidarité pour le Logement" />
-    <link rel="stylesheet" type="text/css" href="styles/content_file.css" />
+    <link rel="stylesheet" type="text/css" href="styles/content_file.css"/>
     <link rel="stylesheet" type="text/css" href="styles/contact_us.css"/>
     <link rel="stylesheet" type="text/css" href="styles/general.css"/>
     <link rel="stylesheet" type="text/css" href="styles/menu.css"/>
@@ -54,7 +54,7 @@ $index = parse_ini_file(__DIR__ . '/../.env')["INDEX"];
         </script>
     </div>
     <!-- END OF THE WEBSITE MENU -->
-    
+
     <!-- CONTENT PAGE -->
     <div id="page_content">
         <div id="whoWeAre">
