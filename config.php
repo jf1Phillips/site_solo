@@ -8,7 +8,6 @@ try {
         $env['DB_PASS']
     );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connexion réussie !";
 } catch (PDOException $e) {
     die("Database error");
 }
