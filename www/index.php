@@ -1,9 +1,6 @@
 <?php
 require '../config.php';
 
-// Récupérer tous les utilisateurs
-$stmt = $pdo->query("SELECT * FROM users");
-$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $index = parse_ini_file(__DIR__ . '/../.env')["INDEX"];
 ?>
 
@@ -24,14 +21,8 @@ $index = parse_ini_file(__DIR__ . '/../.env')["INDEX"];
     <script src="script/load_file.js" type="text/javascript"></script>
     <title>Solidarité Logement</title>
 </head>
-<body onload="getAllFile()">
-  <h1>Utilisateurs</h1>
-  <ul>
-    <?php foreach ($users as $user): ?>
-      <li><?= htmlspecialchars($user['nom']) ?> (<?= htmlspecialchars($user['mode']) ?>)</li>
-    <?php endforeach; ?>
-  </ul>
-
+<body>
+<!-- <body onload="getAllFile()"> -->
     <!-- MENU OF THE WEBSITE -->
     <div id="menu">
         <a href=<?=$index?> title="Solidarité Logement" id="logo">
@@ -95,9 +86,16 @@ $index = parse_ini_file(__DIR__ . '/../.env')["INDEX"];
             <p id="ourMail" class="greyText">Mail: <a href="mailto:bureau@solidarite-logement.org">bureau@solidarite-logement.org</a></p>
         </div>
     </div>
+    <?php
+        $links = $pdo->query("SELECT link FROM text")->fetchAll(PDO::FETCH_COLUMN);
+
+        foreach ($links as $link) {
+            echo "<p>$link</p>";
+        }
+    ?>
 
 </body>
-<script>
+<!-- <script>
     function getAllFile() {
         var all_p = document.getElementsByClassName("putText");
 
@@ -106,5 +104,5 @@ $index = parse_ini_file(__DIR__ . '/../.env')["INDEX"];
             loadFile(listClass[1], all_p[i].id);
         }
     }
-</script>
+</script> -->
 </html>
