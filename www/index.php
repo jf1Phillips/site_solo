@@ -1,7 +1,7 @@
 <?php
 $root = '..';
-require "$root/www/php_function/split_file.php";
-require "$root/www/php_function/put_file_content.php";
+require "$root/php_function/split_file.php";
+require "$root/php_function/put_file_content.php";
 require "$root/config.php";
 $env = parse_ini_file(__DIR__."/$root/.env");
 
