@@ -6,6 +6,7 @@ require "$root/config.php";
 $env = parse_ini_file(__DIR__."/$root/.env");
 
 $index = $env["INDEX"];
+$contact = $env["CONTACT_MAIL"];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -96,7 +97,7 @@ $index = $env["INDEX"];
     <div id="contactUs">
         <div id="inlineContactUs">
             <p id="titleContactUs" class="greyText">Nous contacter</p>
-            <p id="ourMail" class="greyText">Mail: <a href="mailto:bureau@solidarite-logement.org">bureau@solidarite-logement.org</a></p>
+            <p id="ourMail" class="greyText">Mail: <a href=<?="mailto:$contact"?>><?=$contact?></a></p>
         </div>
     </div>
 
