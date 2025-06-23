@@ -1,9 +1,12 @@
 <?php
-require '../config.php';
+$root = '..';
+require "$root/www/php_function/split_file.php";
+require "$root/www/php_function/put_file_content.php";
+require "$root/config.php";
+$env = parse_ini_file(__DIR__."/$root/.env");
 
-$index = parse_ini_file(__DIR__ . '/../.env')["INDEX"];
+$index = $env["INDEX"];
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -48,7 +51,17 @@ $index = parse_ini_file(__DIR__ . '/../.env')["INDEX"];
 
     <!-- CONTENT PAGE -->
     <div id="page_content">
-        <div id="whoWeAre">
+        <?php
+            $links = $pdo->query("SELECT link FROM text")->fetchAll(PDO::FETCH_COLUMN);
+            $folder = $env['TEXT_FOLDER'];
+            $id = 0;
+
+            foreach ($links as $link) {
+                put_file_content($link, $folder, $id);
+                ++$id;
+            }
+        ?>
+        <!-- <div id="whoWeAre">
             <div class="vertLine"></div>
             <p class="big_title">Qui sommes nous ?</p>
             <div class="contentInfo">
@@ -76,7 +89,7 @@ $index = parse_ini_file(__DIR__ . '/../.env')["INDEX"];
                     <p id="propose" class="putText text_file/Propose.txt greyText"></p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <!-- END OF CONTENT PAGE -->
 
@@ -86,13 +99,6 @@ $index = parse_ini_file(__DIR__ . '/../.env')["INDEX"];
             <p id="ourMail" class="greyText">Mail: <a href="mailto:bureau@solidarite-logement.org">bureau@solidarite-logement.org</a></p>
         </div>
     </div>
-    <?php
-        $links = $pdo->query("SELECT link FROM text")->fetchAll(PDO::FETCH_COLUMN);
-
-        foreach ($links as $link) {
-            echo "<p>$link</p>";
-        }
-    ?>
 
 </body>
 <!-- <script>
