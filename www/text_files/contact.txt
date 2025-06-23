@@ -8,7 +8,7 @@ Solidarité Logement propose des permanences les lundi et mardi de
 L’association est également à votre écoute par téléphone et peut
 convenir d’un rendez-vous.
 
-Notre adresse : Paroisse Notre Dame de l’Assomption de Passy, 88,
+<span style='font-weight: 900;'>Notre adresse</span> : Paroisse Notre Dame de l’Assomption de Passy, 88,
 rue de l’Assomption à Paris 16°.</br>
-Mail : contact@solidarite-logement.org</br>
-Tel : 01 44 30 10 83
+<span style='font-weight: 900;'>Mail</span> : contact@solidarite-logement.org</br>
+<span style='font-weight: 900;'>Tel</span> : 01 44 30 10 83
