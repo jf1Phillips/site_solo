@@ -53,12 +53,13 @@ $contact = $env["CONTACT_MAIL"];
     <!-- CONTENT PAGE -->
     <div id="page_content">
         <?php
-            $links = $pdo->query("SELECT link FROM text")->fetchAll(PDO::FETCH_COLUMN);
+            $links = $pdo->query("SELECT link, link_img FROM text")->fetchAll(PDO::FETCH_ASSOC);
             $folder = $env['TEXT_FOLDER'];
+            $img_folder = $env['IMG_FOLDER'];
             $id = 0;
 
-            foreach ($links as $link) {
-                put_file_content($link, $folder, $id);
+            foreach ($links as $row) {
+                put_file_content($row, $folder, $img_folder, $id);
                 ++$id;
             }
         ?>

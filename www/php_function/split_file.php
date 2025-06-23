@@ -12,7 +12,7 @@ function split_file($path): array {
     $title = $lines[0];
     $content = substr(file_get_contents($path), strlen($title));
     $content = str_replace($break, "</br></br>",
-                str_replace("\n", " ",
+                str_replace("\n", " \n",
                 str_replace("\n\n", $break, $content)));
     return [$title, $content];
 }
