@@ -6,7 +6,7 @@ function put_file_content($link, $folder, $id) {
         return;
     $array = split_file($file);
     echo "
-    <div id='$id'>
+    <div id='$id' class='scroll_class'>
         <p class='big_title'>$array[0]</p>
         <div class='contentInfo'>
             <p class='greyText'>$array[1]</p>
