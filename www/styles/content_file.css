@@ -26,6 +26,12 @@
     font-size: 20px;
 }
 
+.text_img {
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
 /* big screen */
 @media (min-width: 1500px) {
     #page_content {

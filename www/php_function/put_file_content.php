@@ -16,7 +16,6 @@ function put_file_content($row, $folder, $img_folder, $id) {
             <div class='contentInfo'>
                 <p class='greyText'>$array[1]</p>
                 <img src='$file_img' class='text_img'/>
-                <p>$file_img</p>
             </div>
         </div>
         ";
