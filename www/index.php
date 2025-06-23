@@ -22,19 +22,27 @@ $contact = $env["CONTACT_MAIL"];
     <link rel="stylesheet" type="text/css" href="styles/contact_us.css"/>
     <link rel="stylesheet" type="text/css" href="styles/general.css"/>
     <link rel="stylesheet" type="text/css" href="styles/menu.css"/>
-    <script src="script/load_file.js" type="text/javascript"></script>
     <title>Solidarité Logement</title>
 </head>
 <body>
-<!-- <body onload="getAllFile()"> -->
     <!-- MENU OF THE WEBSITE -->
     <div id="menu">
         <a href=<?=$index?> title="Solidarité Logement" id="logo">
             <img src="img/Solo.jpg" alt="Solidarité Logement" />
         </a>
         <div>
-            <a href=<?=$index?> class="menuLink">L'Association</a>
-            <a href="#wePropose" class="menuLink">Services</a>
+            <?php
+                $file = $root."/".$env['TEXT_FOLDER']."/".$env['TITLES_FILE'];
+                $content = file($file);
+                $id = 0;
+
+                if (file_exists($file)) {
+                    foreach ($content as $line) {
+                        echo "<a href='#$id' class='menuLink'>$line</a>";
+                        ++$id;
+                    }
+                }
+            ?>
         </div>
 
         <script>
@@ -62,35 +70,6 @@ $contact = $env["CONTACT_MAIL"];
                 ++$id;
             }
         ?>
-        <!-- <div id="whoWeAre">
-            <div class="vertLine"></div>
-            <p class="big_title">Qui sommes nous ?</p>
-            <div class="contentInfo">
-                <div>
-                    <p class="title">Nos origines</p>
-                    <p id="origines" class="putText text_file/Origines.txt greyText"></p>
-                </div>
-                <div>
-                    <p class="title">Notre mission aujourd'hui</p>
-                    <p id="mission" class="putText text_file/Mission.txt greyText"></p>
-                </div>
-                <div>
-                    <p class="title">Notre méthode</p>
-                    <p id="methode" class="putText text_file/Methode.txt greyText"></p>
-                </div>
-            </div>
-        </div>
-
-        <div id="wePropose">
-            <div class="vertLine"></div>
-            <p class="big_title">Ce que nous vous proposons</p>
-            <div class="contentInfo">
-                <div>
-                    <p class="title">Titre</p>
-                    <p id="propose" class="putText text_file/Propose.txt greyText"></p>
-                </div>
-            </div>
-        </div> -->
     </div>
     <!-- END OF CONTENT PAGE -->
 
@@ -102,14 +81,4 @@ $contact = $env["CONTACT_MAIL"];
     </div>
 
 </body>
-<!-- <script>
-    function getAllFile() {
-        var all_p = document.getElementsByClassName("putText");
-
-        for (i = 0; all_p[i]; i++) {
-            listClass = all_p[i].classList;
-            loadFile(listClass[1], all_p[i].id);
-        }
-    }
-</script> -->
 </html>
