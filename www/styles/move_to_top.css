@@ -1,10 +1,10 @@
 #moveToTop {
     font-size: 40px;
-    color: rgba(0, 0, 0, 0.603);
+    color: rgb(134, 134, 134);
 }
 
 #div_top_button {
-    background-color: rgba(0, 0, 0, 0.171);
+    background-color: rgb(255, 255, 255);
     position: fixed;
     top: calc(100% - 80px);
     left: calc(50% - 25px);
@@ -14,8 +14,12 @@
     border-radius: 25px;
     display: none;
     transition: background-color 100ms linear;
+    transition: box-shadow 100ms linear;
+
+    box-shadow: 0px 0px 30px rgb(189, 189, 189);
 }
 
 #div_top_button:hover {
-    background-color: rgb(180, 180, 180);
+    background-color: rgb(226, 226, 226);
+    box-shadow: 0px 0px 30px rgb(117, 117, 117);
 }
