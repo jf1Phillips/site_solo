@@ -18,10 +18,13 @@ $contact = $env["CONTACT_MAIL"];
     <meta name="Keywords" content="Solidarité Logement, Logement, Propriétaire,
     monde associatif, associations du 16eme arrondissement, 16eme arrondissement, Locataires, recherche logement, 
     Fonds de Solidarité pour le Logement" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Manrope' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="styles/content_file.css"/>
     <link rel="stylesheet" type="text/css" href="styles/contact_us.css"/>
     <link rel="stylesheet" type="text/css" href="styles/general.css"/>
     <link rel="stylesheet" type="text/css" href="styles/menu.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/move_to_top.css"/>
     <title>Solidarité Logement</title>
 </head>
 <body>
@@ -44,17 +47,6 @@ $contact = $env["CONTACT_MAIL"];
                 }
             ?>
         </div>
-
-        <script>
-            const header = document.getElementById('menu');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY >= 20) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-        </script>
     </div>
     <!-- END OF THE WEBSITE MENU -->
 
@@ -73,10 +65,29 @@ $contact = $env["CONTACT_MAIL"];
     </div>
     <!-- END OF CONTENT PAGE -->
 
+    <!-- BUTTON TOP -->
+    <div id="div_top_button">
+        <a href="#0" id="moveToTop">^</a>
+    </div>
+    <!-- END BUTTON TOP -->
+    <script>
+            const header = document.getElementById('menu');
+            const top_button = document.getElementById('div_top_button');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY >= 20) {
+                    header.classList.add('scrolled');
+                    top_button.style.display = 'block';
+                } else {
+                    header.classList.remove('scrolled');
+                    top_button.style.display = 'none';
+                }
+            });
+    </script>
+
     <div id="contactUs">
         <div id="inlineContactUs">
             <p id="titleContactUs" class="greyText">Nous contacter</p>
-            <p id="ourMail" class="greyText">Mail: <a href=<?="mailto:$contact"?>><?=$contact?></a></p>
+            <!-- <p id="ourMail" class="greyText">Mail: <a href=<?="mailto:$contact"?>><?=$contact?></a></p> -->
         </div>
     </div>
 
