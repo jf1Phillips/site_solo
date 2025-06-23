@@ -9,16 +9,6 @@
     scroll-margin-top: 100px;
 }
 
-.putText {
-    font-size: 15px;
-}
-
-.title {
-    font-size: 20px;
-    margin-bottom: -2px;
-    color: rgb(16, 82, 168);
-}
-
 .big_title {
     font-size: 25px;
     margin-bottom: -8px;
@@ -31,20 +21,31 @@
     margin-left: 8px;
 }
 
+.greyText {
+    color: rgb(87, 87, 87);
+    font-size: 20px;
+}
+
+/* big screen */
 @media (min-width: 1500px) {
     #page_content {
         margin-left: 15%;
         width: 800px;
     }
+    .greyText {
+        font-size: 23px;
+    }
 }
 
-@media (min-width: 1200px) {
+/* middle screen */
+@media (min-width: 1200px) and (max-width: 1499px) {
     #page_content {
         width: 800px;
     }
 }
 
-@media (min-width: 1000px) and (max-width: 1200px){
+/* little screen */
+@media (min-width: 1000px) and (max-width: 1199px){
     #page_content {
         width: 650px;
     }
