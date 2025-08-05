@@ -15,7 +15,8 @@ function put_file_content($row, $folder, $img_folder, $id) {
             <p class='big_title'>$array[0]</p>
             <div class='contentInfo'>
                 <p class='greyText'>$array[1]</p>
-                <img src='$file_img' class='text_img'/>
+                <img src='$file_img' class='text_img'
+                 style='height:{$row['height']}px;'/>
             </div>
         </div>
         ";
