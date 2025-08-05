@@ -53,7 +53,7 @@ $contact = $env["CONTACT_MAIL"];
     <!-- CONTENT PAGE -->
     <div id="page_content">
         <?php
-            $links = $pdo->query("SELECT link, link_img FROM text")->fetchAll(PDO::FETCH_ASSOC);
+            $links = $pdo->query("SELECT link, link_img, height FROM text")->fetchAll(PDO::FETCH_ASSOC);
             $folder = $env['TEXT_FOLDER'];
             $img_folder = $env['IMG_FOLDER'];
             $id = 0;
