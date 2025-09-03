@@ -88,7 +88,12 @@ $contact = $env["CONTACT_MAIL"];
     <div id="contactUs">
         <div id="inlineContactUs">
             <p id="titleContactUs" class="greyText">Nous contacter</p>
-            <!-- <p id="ourMail" class="greyText">Mail: <a href=<?="mailto:$contact"?>><?=$contact?></a></p> -->
+            <p id="contentContactUs" class="greyText">
+                <span style='font-weight: 900;'>Mail</span> : <a href="mailto:contact@solidarite-logement.org">contact@solidarite-logement.org</a></br>
+                <span style='font-weight: 900;'>Notre adresse</span> : Paroisse Notre Dame de l'Assomption de Passy, 88,
+                rue de l'Assomption à Paris 16°.</br>
+                <span style='font-weight: 900;'>Tel</span> : 01 44 30 10 83
+            </p>
         </div>
     </div>
 

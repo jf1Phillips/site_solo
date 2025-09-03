@@ -1,4 +1,6 @@
-<?php exit(); ?>
+<?php
+exit();
+?>
 <?php require '../../config.php'; ?>
 <?php require '../../requests/post/mail_post.php'; ?>
 <!DOCTYPE html>
