@@ -1,5 +1,9 @@
 <?php
+// mdp require
+require "./mdp.php";
 $root = '..';
+
+
 require "$root/php_function/split_file.php";
 require "$root/php_function/put_file_content.php";
 require "$root/config.php";
