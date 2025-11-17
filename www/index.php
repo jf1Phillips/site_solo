@@ -1,6 +1,6 @@
 <?php
 // mdp require
-require "./mdp.php";
+// require "./mdp.php";
 $root = '..';
 
 
@@ -33,7 +33,7 @@ $contact = $env["CONTACT_MAIL"];
 </head>
 <body>
     <!-- MENU OF THE WEBSITE -->
-    <div id="menu">
+    <section id="menu">
         <a href=<?=$index?> title="Solidarité Logement" id="logo">
             <img src="img/Solo.jpg" alt="Solidarité Logement" />
         </a>
@@ -51,11 +51,11 @@ $contact = $env["CONTACT_MAIL"];
                 }
             ?>
         </div>
-    </div>
+    </section>
     <!-- END OF THE WEBSITE MENU -->
 
     <!-- CONTENT PAGE -->
-    <div id="page_content">
+    <section id="page_content">
         <?php
             $links = $pdo->query("SELECT link, link_img, height FROM text")->fetchAll(PDO::FETCH_ASSOC);
             $folder = $env['TEXT_FOLDER'];
@@ -67,7 +67,7 @@ $contact = $env["CONTACT_MAIL"];
                 ++$id;
             }
         ?>
-    </div>
+    </section>
     <!-- END OF CONTENT PAGE -->
 
     <!-- BUTTON TOP -->
@@ -89,16 +89,28 @@ $contact = $env["CONTACT_MAIL"];
             });
     </script>
 
-    <div id="contactUs">
-        <div id="inlineContactUs">
-            <p id="titleContactUs" class="greyText">Nous contacter</p>
-            <p id="contentContactUs" class="greyText">
-                <span style='font-weight: 900;'>Mail</span> : <a href="mailto:contact@solidarite-logement.org">contact@solidarite-logement.org</a></br>
-                <span style='font-weight: 900;'>Notre adresse</span> : Paroisse Notre Dame de l'Assomption de Passy, 88,
-                rue de l'Assomption à Paris 16°.</br>
-                <span style='font-weight: 900;'>Tel</span> : 01 44 30 10 83
-            </p>
-        </div>
+    <div class="contact-form">
+        <h2>Nous contacter</h2>
+
+        <form action="send.php" method="POST" id="contactForm">
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" required placeholder="Votre nom">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required placeholder="Votre adresse e-mail">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="Votre message" rows="5"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Envoyer</button>
+        </form>
+        <p class="form-status" id="formStatus"></p>
     </div>
 
 </body>
