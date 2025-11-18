@@ -1,8 +1,5 @@
 <?php
-// mdp require
-// require "./mdp.php";
 $root = '..';
-
 
 require "$root/php_function/split_file.php";
 require "$root/php_function/put_file_content.php";
@@ -91,27 +88,52 @@ $contact = $env["CONTACT_MAIL"];
 
     <div class="contact-form">
         <h2>Nous contacter</h2>
-
-        <form action="send.php" method="POST" id="contactForm">
+        <form action="" method="POST" id="contactForm">
             <div class="form-group">
                 <label for="name">Nom</label>
                 <input type="text" id="name" name="name" required placeholder="Votre nom">
             </div>
-
             <div class="form-group">
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" required placeholder="Votre adresse e-mail">
             </div>
-
             <div class="form-group">
                 <label for="message">Message</label>
-                <textarea id="message" name="message" required placeholder="Votre message" rows="5"></textarea>
+                <textarea id="message" name="content" required placeholder="Votre message" rows="5"></textarea>
             </div>
-
             <button type="submit" class="btn-submit">Envoyer</button>
         </form>
         <p class="form-status" id="formStatus"></p>
     </div>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const status = document.getElementById('formStatus');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault(); 
+            const formData = new FormData(form);
+            try {
+                const response = await fetch('/send.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                const text = await response.text();
+                if (text.trim() === 'OK') {
+                    status.textContent = "Message envoyé !";
+                    status.style.color = "green";
+                    form.reset();
+                } else {
+                    status.textContent = "Erreur : " + text;
+                    status.style.color = "red";
+                }
+            } catch (err) {
+                status.textContent = "Erreur réseau.";
+                status.style.color = "red";
+            }
+        });
+
+    </script>
 
 </body>
 </html>
