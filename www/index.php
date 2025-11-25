@@ -52,18 +52,40 @@ $contact = $env["CONTACT_MAIL"];
     <!-- END OF THE WEBSITE MENU -->
 
     <!-- CONTENT PAGE -->
-    <section id="page_content">
-        <?php
-            $links = $pdo->query("SELECT link, link_img, height FROM text")->fetchAll(PDO::FETCH_ASSOC);
-            $folder = $env['TEXT_FOLDER'];
-            $img_folder = $env['IMG_FOLDER'];
-            $id = 0;
+    <section class="contentAndContact">
+        <section id="page_content">
+            <?php
+                $links = $pdo->query("SELECT link, link_img, height FROM text")->fetchAll(PDO::FETCH_ASSOC);
+                $folder = $env['TEXT_FOLDER'];
+                $img_folder = $env['IMG_FOLDER'];
+                $id = 0;
 
-            foreach ($links as $row) {
-                put_file_content($row, $folder, $img_folder, $id);
-                ++$id;
-            }
-        ?>
+                foreach ($links as $row) {
+                    put_file_content($row, $folder, $img_folder, $id);
+                    ++$id;
+                }
+            ?>
+        </section>
+        <!-- contact us section -->
+        <div class="contact-form">
+            <h2>Nous contacter</h2>
+            <form action="" method="POST" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" required placeholder="Votre nom">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="Votre adresse e-mail">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="content" required placeholder="Votre message" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Envoyer</button>
+            </form>
+            <p class="form-status" id="formStatus"></p>
+        </div>
     </section>
     <!-- END OF CONTENT PAGE -->
 
@@ -85,26 +107,6 @@ $contact = $env["CONTACT_MAIL"];
                 }
             });
     </script>
-
-    <div class="contact-form">
-        <h2>Nous contacter</h2>
-        <form action="" method="POST" id="contactForm">
-            <div class="form-group">
-                <label for="name">Nom</label>
-                <input type="text" id="name" name="name" required placeholder="Votre nom">
-            </div>
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required placeholder="Votre adresse e-mail">
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="content" required placeholder="Votre message" rows="5"></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Envoyer</button>
-        </form>
-        <p class="form-status" id="formStatus"></p>
-    </div>
     <style>
         .dots::after {
             content: "";
