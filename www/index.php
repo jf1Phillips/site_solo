@@ -14,8 +14,7 @@ $contact = $env["CONTACT_MAIL"];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="Description" content="Aider les personnes en difficulté à résoudre leurs
-    démarches face au problème du logement" />
+    <meta name="description" content="Solidarité Logement accompagne les jeunes travailleurs et étudiants en alternance à Paris dans leur recherche de logement. Association d’intérêt général depuis 40 ans, nous mettons en place un soutien personnalisé pour aider les jeunes à trouver un logement stable, sécurisé et adapté à leurs besoins. Propriétaires et bénévoles partenaires, rejoignez un projet solidaire pour soutenir la jeunesse dans ses premiers pas professionnels.">
     <meta name="Keywords" content="Solidarité Logement, Logement, Propriétaire,
     monde associatif, associations du 16eme arrondissement, 16eme arrondissement, Locataires, recherche logement, 
     Fonds de Solidarité pour le Logement" />
@@ -26,7 +25,16 @@ $contact = $env["CONTACT_MAIL"];
     <link rel="stylesheet" type="text/css" href="styles/general.css"/>
     <link rel="stylesheet" type="text/css" href="styles/menu.css"/>
     <link rel="stylesheet" type="text/css" href="styles/move_to_top.css"/>
+    <link rel="canonical" href="https://www.solidarite-logement.org/">
+    <link rel="icon" href="img/icon/icon.ico" type="image/x-icon">
     <title>Solidarité Logement</title>
+
+    <!-- for send -->
+    <meta property="og:title" content="Solidarité Logement - Accompagnement des jeunes travailleurs à Paris">
+    <meta property="og:description" content="Depuis 40 ans, Solidarité Logement aide les jeunes travailleurs et étudiants en alternance à trouver un logement stable et sécurisé à Paris.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.solidarite-logement.org/">
+    <meta property="og:image" content="https://www.solidarite-logement.org/img/Solo.jpg">
 </head>
 <body>
     <!-- MENU OF THE WEBSITE -->
