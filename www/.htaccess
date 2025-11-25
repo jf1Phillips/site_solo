@@ -1,4 +1,5 @@
-# Redirection de http://solidarite-logement.org vers https://www.solidarite-logement.org
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^solidarite-logement\.org [NC]
+
+# Redirection vers www si pas présent
+RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteRule ^(.*)$ https://www.solidarite-logement.org/$1 [L,R=301]

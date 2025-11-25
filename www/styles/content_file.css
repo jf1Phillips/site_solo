@@ -98,5 +98,6 @@
 
     .contact-form {
         margin: 30px auto;
+        max-width: 300px;
     }
 }
