@@ -105,14 +105,31 @@ $contact = $env["CONTACT_MAIL"];
         </form>
         <p class="form-status" id="formStatus"></p>
     </div>
+    <style>
+        .dots::after {
+            content: "";
+            animation: dotty 0.8s steps(4) infinite;
+        }
+
+        @keyframes dotty {
+            0%   { content: ""; }
+            25%  { content: "."; }
+            50%  { content: ".."; }
+            75%  { content: "..."; }
+            100% { content: ""; }
+        }
+
+    </style>
 
     <script>
         const form = document.getElementById('contactForm');
         const status = document.getElementById('formStatus');
+        const sendBtn = document.querySelector('.btn-submit');
 
         form.addEventListener('submit', async (e) => {
-            e.preventDefault(); 
+            e.preventDefault();
             const formData = new FormData(form);
+            sendBtn.classList.add('dots');
             try {
                 const response = await fetch('/send.php', {
                     method: 'POST',
@@ -131,6 +148,7 @@ $contact = $env["CONTACT_MAIL"];
                 status.textContent = "Erreur réseau.";
                 status.style.color = "red";
             }
+            sendBtn.classList.remove('dots');
         });
 
     </script>

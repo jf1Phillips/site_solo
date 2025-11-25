@@ -2,10 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Si tu utilises Composer
-$root = "../..";
 require __DIR__ . '/../../vendor/autoload.php';
 
+$root = "../..";
 $env = parse_ini_file(__DIR__."/$root/.env");
 
 // Récupération et validation des champs
