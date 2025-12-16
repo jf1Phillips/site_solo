@@ -1,7 +1,6 @@
 <?php
 $root = '..';
 
-require "$root/php_function/split_file.php";
 require "$root/php_function/put_file_content.php";
 require "$root/config.php";
 $env = parse_ini_file(__DIR__."/$root/.env");
@@ -27,7 +26,7 @@ $contact = $env["CONTACT_MAIL"];
     <link rel="stylesheet" type="text/css" href="styles/move_to_top.css"/>
     <link rel="canonical" href="https://www.solidarite-logement.org/">
     <link rel="icon" href="img/icon/icon.ico" type="image/x-icon">
-    <title>Solidarité Logement</title>
+    <title>Solidarité Logement - Association jeunes travailleurs</title>
 
     <!-- for send -->
     <meta property="og:title" content="Solidarité Logement - Accompagnement des jeunes travailleurs à Paris">
@@ -44,16 +43,16 @@ $contact = $env["CONTACT_MAIL"];
         </a>
         <div>
             <?php
-                $file = $root."/".$env['TEXT_FOLDER']."/".$env['TITLES_FILE'];
-                $content = file($file);
-                $id = 0;
+                // $file = $root."/".$env['TEXT_FOLDER']."/".$env['TITLES_FILE'];
+                // $content = file($file);
+                // $id = 0;
 
-                if (file_exists($file)) {
-                    foreach ($content as $line) {
-                        echo "<a href='#$id' class='menuLink'>$line</a>";
-                        ++$id;
-                    }
-                }
+                // if (file_exists($file)) {
+                //     foreach ($content as $line) {
+                //         echo "<a href='#$id' class='menuLink'>$line</a>";
+                //         ++$id;
+                //     }
+                // }
             ?>
         </div>
     </section>
@@ -63,14 +62,10 @@ $contact = $env["CONTACT_MAIL"];
     <section class="contentAndContact">
         <section id="page_content">
             <?php
-                $links = $pdo->query("SELECT link, link_img, height FROM text")->fetchAll(PDO::FETCH_ASSOC);
-                $folder = $env['TEXT_FOLDER'];
-                $img_folder = $env['IMG_FOLDER'];
-                $id = 0;
+                $links = $pdo->query("SELECT id, title, content, link_img, height FROM text")->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach ($links as $row) {
-                    put_file_content($row, $folder, $img_folder, $id);
-                    ++$id;
+                    put_file_content($row, $env["IMG_FOLDER"]);
                 }
             ?>
         </section>

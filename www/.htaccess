@@ -8,7 +8,4 @@ RewriteRule ^(.*)$ https://www.solidarite-logement.org/$1 [L,R=301]
 RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteRule ^(.*)$ https://www.solidarite-logement.org/$1 [L,R=301]
 
-# Forcer le type XML pour le sitemap
-<Files "sitemap.xml">
-    ForceType application/xml
-</Files>
+Redirect 301 /sitemap.php /sitemap.xml
