@@ -37,24 +37,47 @@ $contact = $env["CONTACT_MAIL"];
 </head>
 <body>
     <!-- MENU OF THE WEBSITE -->
-    <section id="menu">
-        <a href=<?=$index?> title="Solidarité Logement" id="logo">
+    <section class="menu">
+        <a href=<?=$index?> title="Solidarité Logement" class="logo">
             <img src="img/Solo.jpg" alt="Solidarité Logement" />
         </a>
-        <div>
+        <div class="titles">
             <?php
-                // $file = $root."/".$env['TEXT_FOLDER']."/".$env['TITLES_FILE'];
-                // $content = file($file);
-                // $id = 0;
+                $titles = $pdo->query("SELECT id, title FROM text")->fetchAll(PDO::FETCH_ASSOC);
 
-                // if (file_exists($file)) {
-                //     foreach ($content as $line) {
-                //         echo "<a href='#$id' class='menuLink'>$line</a>";
-                //         ++$id;
-                //     }
-                // }
+                foreach ($titles as $title) {
+                    $id = $title["id"];
+                    $txt = $title["title"];
+                    echo "<a href='#$id' class='menuLink'>$txt</a>";
+                    ++$id;
+                }
             ?>
         </div>
+        <script>
+            const logo = document.querySelector('.logo');
+            const titles = document.querySelector('.titles');
+
+            function checkCollision() {
+                const logoRect = logo.getBoundingClientRect();
+                const titlesRect = titles.getBoundingClientRect();
+
+                const isColliding = !(
+                    logoRect.right < titlesRect.left ||
+                    logoRect.left > titlesRect.right ||
+                    logoRect.bottom < titlesRect.top ||
+                    logoRect.top > titlesRect.bottom
+                );
+
+                if (isColliding) {
+                    titles.classList.add('hidden');
+                } else {
+                    titles.classList.remove('hidden');
+                }
+            }
+
+            window.addEventListener('load', checkCollision);
+            window.addEventListener('resize', checkCollision);
+        </script>
     </section>
     <!-- END OF THE WEBSITE MENU -->
 
@@ -98,7 +121,7 @@ $contact = $env["CONTACT_MAIL"];
     </div>
     <!-- END BUTTON TOP -->
     <script>
-            const header = document.getElementById('menu');
+            const header = document.querySelector('.menu');
             const top_button = document.getElementById('div_top_button');
             window.addEventListener('scroll', () => {
                 if (window.scrollY >= 20) {

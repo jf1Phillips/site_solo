@@ -1,4 +1,4 @@
-#menu {
+.menu {
     top: 0px;
     position: fixed;
     display: flex;
@@ -11,24 +11,28 @@
     transition: box-shadow 100ms linear;
 }
 
-#menu img {
+.menu img {
     margin-left: 20px;
     height: 60px;
+}
+
+.titles {
+    padding: 0px 2vw 0px 2vw;
+    margin-left: auto;
+}
+
+.titles.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .menuLink {
     position: relative;
     font-size: 22px;
-    margin-right: 30px;
-    left: 20px;
+    margin: 0 2vw 0 2vw;
 }
 
 .scrolled {
     box-shadow: -3px 8px 20px rgb(189, 189, 189);
-}
-
-@media (max-width: 1000px) {
-    .menuLink {
-        font-size: 16px;
-    }
 }
