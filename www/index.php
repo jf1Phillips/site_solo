@@ -6,7 +6,7 @@ require "$root/config.php";
 $env = parse_ini_file(__DIR__."/$root/.env");
 
 $index = $env["INDEX"];
-$contact = $env["CO>NTACT_MAIL"];
+$contact = $env["CONTACT_MAIL"];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
