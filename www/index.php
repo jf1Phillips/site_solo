@@ -6,7 +6,7 @@ require "$root/config.php";
 $env = parse_ini_file(__DIR__."/$root/.env");
 
 $index = $env["INDEX"];
-$contact = $env["CONTACT_MAIL"];
+$contact = $env["CO>NTACT_MAIL"];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -38,24 +38,48 @@ $contact = $env["CONTACT_MAIL"];
 <body>
     <!-- MENU OF THE WEBSITE -->
     <section class="menu">
-        <a href=<?=$index?> title="Solidarité Logement" class="logo">
-            <img src="img/Solo.jpg" alt="Solidarité Logement" />
-        </a>
-        <div class="titles">
+        <section class="menu_header">
+            <a href=<?=$index?> title="Solidarité Logement" class="logo" >
+                <img src="img/Solo.jpg" alt="Solidarité Logement" class="img_logo" />
+            </a>
+            <div class="titles">
+                <?php
+                    $titles = $pdo->query("SELECT id, title FROM text")->fetchAll(PDO::FETCH_ASSOC);
+
+                    foreach ($titles as $title) {
+                        $id = $title["id"];
+                        $txt = $title["title"];
+                        echo "<a href='#$id' class='menuLink'>$txt</a>";
+                        ++$id;
+                    }
+                ?>
+            </div>
+
+            <button class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </section>
+
+        <div class="titles_hamburger hidden">
             <?php
                 $titles = $pdo->query("SELECT id, title FROM text")->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach ($titles as $title) {
                     $id = $title["id"];
                     $txt = $title["title"];
-                    echo "<a href='#$id' class='menuLink'>$txt</a>";
+                    echo "<a href='#$id' class='menuLink_hamburger'>$txt</a>";
                     ++$id;
                 }
             ?>
         </div>
+
         <script>
             const logo = document.querySelector('.logo');
             const titles = document.querySelector('.titles');
+            const hamburger = document.querySelector('.hamburger');
+            const titles_hamburger = document.querySelector(".titles_hamburger");
 
             function checkCollision() {
                 const logoRect = logo.getBoundingClientRect();
@@ -70,15 +94,25 @@ $contact = $env["CONTACT_MAIL"];
 
                 if (isColliding) {
                     titles.classList.add('hidden');
+                    hamburger.classList.remove('hidden');
                 } else {
                     titles.classList.remove('hidden');
+                    hamburger.classList.add('hidden');
+                    titles_hamburger.classList.add('hidden');
+                    hamburger.classList.remove('active');
                 }
             }
 
             window.addEventListener('load', checkCollision);
             window.addEventListener('resize', checkCollision);
+
+            function toggleMenu() {
+                hamburger.classList.toggle('active');
+                titles_hamburger.classList.toggle('hidden');
+            }
         </script>
     </section>
+
     <!-- END OF THE WEBSITE MENU -->
 
     <!-- CONTENT PAGE -->
@@ -121,7 +155,7 @@ $contact = $env["CONTACT_MAIL"];
     </div>
     <!-- END BUTTON TOP -->
     <script>
-            const header = document.querySelector('.menu');
+            const header = document.querySelector('.menu_header');
             const top_button = document.getElementById('div_top_button');
             window.addEventListener('scroll', () => {
                 if (window.scrollY >= 20) {
