@@ -1,5 +1,4 @@
 <?php
-
 function put_file_content($row, $img_folder) {
     $file_img = "$img_folder/".$row['link_img'];
     $title = $row["title"];
