@@ -1,36 +1,32 @@
-<?php
-// exit();
-return;
+<?php 
+require '../../config.php';
+require '../../php_function/put_content_for_panel.php';
 ?>
-<?php require '../../config.php'; ?>
-<?php require '../../requests/post/mail_post.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Admin Panel</title>
+    <link rel="stylesheet" type="text/css" href="../styles/content_file.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/contact_us.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/general.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/menu.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/move_to_top.css"/>
 </head>
 <body>
-    <!-- START OF PANEL -->
-    <div class="div_panel">
-        <form action="" method="POST" id="admin-form">
-            <input type="hidden" name="form_id" value="admin_mail_form">
-            <fieldset>
-                <legend>Admin panel</legend>
-                <label for="name">Email</label>
-                <input type="text" id="name" name="to" required>
-                <label for="sub">Subject</label>
-                <input type="text" id="sub" name="subject" required>
-                <label for="cont">Content</label>
-                <input type="text" id="cont" name="content" required>
-            </fieldset>
+    <!-- CONTENT PAGE -->
+    <section class="contentAndContact">
+        <section id="page_content">
+            <?php
+                $links = $pdo->query("SELECT id, title, content, link_img, height FROM text")->fetchAll(PDO::FETCH_ASSOC);
 
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-    <!-- END OF ADMIN PANEL -->
-
-    <?= $message ?>
+                foreach ($links as $row) {
+                    put_content_for_panel($row, "../".$env["IMG_FOLDER"]);
+                }
+            ?>
+        </section>
+    </section>
+    <!-- END OF CONTENT PAGE -->
 </body>
 </html>

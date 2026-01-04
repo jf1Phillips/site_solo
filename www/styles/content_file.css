@@ -10,6 +10,27 @@
     scroll-margin-top: 100px;
 }
 
+.editableDiv::before {
+    content: "";
+    position: absolute;
+    background: #7a7a7a44;
+    inset: 0;
+    border: 3px solid rgb(16, 82, 168);
+    border-radius: 20px;
+}
+.editableDiv:hover {
+    border-radius: 20px;
+    background: #7a7a7a9c;
+}
+
+.editableDiv {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 10px;
+    transition: all;
+    transition-duration: 300ms;
+}
+
 .big_title {
     font-size: 25px;
     margin-bottom: -8px;
