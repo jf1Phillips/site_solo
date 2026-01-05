@@ -26,7 +26,7 @@ function put_content_for_panel($row, $img_folder) {
 
     echo "
     <div class='editableDiv'>
-        <button class='deleteEditableDiv'>
+        <button class='deleteEditableDiv' onclick='deleteDiv($id)'>
             <span></span>
             <span></span>
         </button>

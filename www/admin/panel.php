@@ -13,8 +13,20 @@ require '../../php_function/put_content_for_panel.php';
     <link rel="stylesheet" type="text/css" href="../styles/general.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/menu.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/move_to_top.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/admin_panel.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Manrope' rel='stylesheet'>
 </head>
 <body>
+    <div class="modal-overlay hidden">
+        <div class="confirmDelete">
+            <p>Cette action est irréversible</p>
+            <div>
+                <button onclick="removePopup()">Annuler</button>
+                <button>Supprimer</button>
+            </div>
+        </div>
+    </div>
     <!-- CONTENT PAGE -->
     <section class="contentAndContact">
         <section id="page_content">
@@ -26,6 +38,16 @@ require '../../php_function/put_content_for_panel.php';
                 }
             ?>
         </section>
+        <script>
+            const popup = document.querySelector('.modal-overlay');
+            function deleteDiv(index) {
+                popup.classList.remove("hidden");
+                console.log(index);
+            }
+            function removePopup() {
+                popup.classList.add("hidden");
+            }
+        </script>
     </section>
     <!-- END OF CONTENT PAGE -->
 </body>
