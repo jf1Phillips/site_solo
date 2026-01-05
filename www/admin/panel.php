@@ -20,7 +20,7 @@ require '../../php_function/put_content_for_panel.php';
 <body>
     <div class="modal-overlay hidden">
         <div class="confirmDelete">
-            <p>Cette action est irréversible</p>
+            <p>Voulez vous vraiment supprimer ce champ ?</p>
             <div>
                 <button onclick="removePopup()">Annuler</button>
                 <button>Supprimer</button>

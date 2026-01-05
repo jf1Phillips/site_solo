@@ -4,6 +4,7 @@
     visibility: hidden;
     pointer-events: none;
 }
+
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -15,8 +16,6 @@
 }
 
 .confirmDelete {
-    width: 300px;
-    height: 100px;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -25,7 +24,7 @@
     border-radius: 5px;
     font-size: 20px;
     font-weight: 900;
-    padding: 10px;
+    padding: 10px 30px 20px 30px;
     background-color: #fff;
 }
 
@@ -45,7 +44,89 @@
     cursor: pointer;
     font-size: 15px;
 }
+
 .confirmDelete div button:nth-child(2) {
     background-color: rgb(190, 13, 13);
 }
+
 /* FIN DU BOUTON DE CONFIRMATION */
+
+/* BOUTON POUR EDIT */
+.edit-anim {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+/* Transition commune */
+.edit-icon::before,
+.edit-icon::after {
+    transition: transform 0.25s ease;
+}
+
+/* Flèche vers le haut */
+.edit-icon::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    transform: translateY(0);
+}
+
+/* Flèche vers le bas */
+.edit-icon::after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: translateY(0);
+}
+
+.editBtn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    border: none;
+    background: rgba(21, 110, 212, 0.651);
+    padding: 0px 20px 0px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    color: white;
+    transition: all;
+    transition-duration: 100ms;
+    opacity: 0;
+}
+
+.editableDiv:hover .editBtn{
+    opacity: 1;
+}
+
+.editBtn:hover {
+    background: rgb(21, 110, 212);
+}
+
+.editBtn:hover .edit-icon::before {
+    transform: translateY(-3px) translateX(-3px);
+}
+
+.editBtn:hover .edit-icon::after {
+    transform: translateY(3px) translateX(3px);
+}
+
+/* FIN DU BOUTON POUR EDIT */

@@ -10,27 +10,31 @@
     scroll-margin-top: 100px;
 }
 
-
 /* ADMIN PANEL */
-.editableDiv::before {
-    content: "";
+.editWrapper {
     position: absolute;
-    background: #7a7a7a44;
     inset: 0;
-    border: 3px solid rgb(16, 82, 168);
-    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #7a7a7a13;
+    transition: all;
+    transition-duration: 500ms;
+    border-radius: 15px;
 }
-.editableDiv:hover {
-    border-radius: 20px;
+
+.editableDiv:hover .editWrapper {
     background: #7a7a7a9c;
 }
 
 .editableDiv {
+    border: 3px solid rgb(16, 82, 168);
+    border-radius: 20px;
     position: relative;
+    border-radius: 20px;
     padding: 20px;
     margin-bottom: 10px;
-    transition: all;
-    transition-duration: 300ms;
+    user-select: none;
 }
 
 .deleteEditableDiv {
