@@ -34,6 +34,13 @@ $contact = $env["CONTACT_MAIL"];
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.solidarite-logement.org/">
     <meta property="og:image" content="https://www.solidarite-logement.org/img/Solo.jpg">
+
+
+    <script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        async
+        defer>
+    </script>
 </head>
 <body>
     <!-- MENU OF THE WEBSITE -->
@@ -142,6 +149,12 @@ $contact = $env["CONTACT_MAIL"];
                     <label for="message">Message</label>
                     <textarea id="message" name="content" required placeholder="Votre message" rows="5"></textarea>
                 </div>
+
+                <!-- CAPTCHA -->
+                <div class="cf-turnstile captcha" data-theme="light" data-size="normal"
+                    data-sitekey="0x4AAAAAAFp1CdO4Rb8vM1fj">
+                </div>
+
                 <button type="submit" class="btn-submit">Envoyer</button>
             </form>
             <p class="form-status" id="formStatus"></p>
@@ -193,7 +206,7 @@ $contact = $env["CONTACT_MAIL"];
             const formData = new FormData(form);
             sendBtn.classList.add('dots');
             try {
-                const response = await fetch('/send.php', {
+                const response = await fetch('/api/contact.php', {
                     method: 'POST',
                     body: formData
                 });

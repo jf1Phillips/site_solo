@@ -24,6 +24,13 @@
     margin-left: 10px;
 }
 
+.captcha {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .form-group input, .form-group textarea {
     resize: none;
     padding: 10px;
