@@ -1,16 +1,18 @@
 .menu {
-    top: 0px;
     position: fixed;
+    top: 0;
     width: 100%;
     height: 60px;
+    z-index: 100;
 }
 
 .menu_header {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     background-color: white;
-    border-radius: 0px 0px 3px 3px;
+    border-radius: 0 0 3px 3px;
     transition: box-shadow 100ms linear;
     z-index: 10;
 }
@@ -83,21 +85,20 @@
 }
 
 .titles_hamburger {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     background-color: white;
     text-align: right;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 20px;
+    padding: 10px 20px;
     box-shadow: -3px 20px 20px rgba(189, 189, 189, 0.411);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
     transform: translateY(0);
 }
 
 .titles_hamburger.hidden {
     transform: translateY(-100%);
-    opacity: 0;
     pointer-events: none;
 }
 
