@@ -146,7 +146,7 @@ $contact = $env["CONTACT_MAIL"];
                     <input type="email" id="email" name="email" required placeholder="Votre adresse e-mail">
                 </div>
                 <div class="form-group">
-                    <label for="message">Message</label>
+                    <label for="message">Demande de rendez-vous</label>
                     <textarea id="message" name="content" required placeholder="Votre message" rows="5"></textarea>
                 </div>
 

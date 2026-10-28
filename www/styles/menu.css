@@ -93,12 +93,13 @@
     text-align: right;
     padding: 10px 20px;
     box-shadow: -3px 20px 20px rgba(189, 189, 189, 0.411);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     transform: translateY(0);
 }
 
 .titles_hamburger.hidden {
     transform: translateY(-100%);
+    opacity: 0;
     pointer-events: none;
 }
 
