@@ -11,10 +11,28 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    height: 60px;
     background-color: white;
     border-radius: 0 0 3px 3px;
     transition: box-shadow 100ms linear;
     z-index: 10;
+}
+
+
+/* Masquer le menu jusqu'à la première détection */
+.menu:not(.menu-ready) .titles,
+.menu:not(.menu-ready) .hamburger {
+    visibility: hidden;
+}
+
+/* Le menu normal est affiché par défaut */
+.menu.menu-ready .titles:not(.hidden) {
+    visibility: visible;
+}
+
+/* Le hamburger apparaît uniquement si nécessaire */
+.menu.menu-ready .hamburger:not(.hidden) {
+    visibility: visible;
 }
 
 .img_logo {

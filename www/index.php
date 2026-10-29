@@ -83,10 +83,11 @@ $contact = $env["CONTACT_MAIL"];
         </div>
 
         <script>
+            const menu = document.querySelector('.menu');
             const logo = document.querySelector('.logo');
             const titles = document.querySelector('.titles');
             const hamburger = document.querySelector('.hamburger');
-            const titles_hamburger = document.querySelector(".titles_hamburger");
+            const titles_hamburger = document.querySelector('.titles_hamburger');
 
             function checkCollision() {
                 const logoRect = logo.getBoundingClientRect();
@@ -108,15 +109,21 @@ $contact = $env["CONTACT_MAIL"];
                     titles_hamburger.classList.add('hidden');
                     hamburger.classList.remove('active');
                 }
-            }
 
-            window.addEventListener('load', checkCollision);
-            window.addEventListener('resize', checkCollision);
+                // Afficher le menu après le calcul initial
+                menu.classList.add('menu-ready');
+            }
 
             function toggleMenu() {
                 hamburger.classList.toggle('active');
                 titles_hamburger.classList.toggle('hidden');
             }
+
+            // Calcul initial dès que le script est exécuté
+            checkCollision();
+
+            // Recalculer lorsque la fenêtre change de taille
+            window.addEventListener('resize', checkCollision);
         </script>
     </section>
 
