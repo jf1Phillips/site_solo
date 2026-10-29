@@ -43,6 +43,7 @@
     background-color: #d1d1d1;
     cursor: pointer;
     font-size: 15px;
+    z-index: 10;
 }
 
 .confirmDelete div button:nth-child(2) {

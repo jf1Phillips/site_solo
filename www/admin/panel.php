@@ -1,4 +1,4 @@
-<?php 
+<?php
 require '../../config.php';
 require '../../php_function/put_content_for_panel.php';
 ?>
